@@ -1,9 +1,9 @@
 ; Задача № 12 Вариант 1
 ; Определите функцию, заменяющую в исходном списке два подряд идущих одинаковых элемента одним.
 
-(defun gulya (list) 
+(defun rep (list) 
   (when list ((lambda (x y)
-             (cons x  (gulya (if (eq x (car y)) (cdr y) y))))
+             (cons x  (rep (if (eq x (car y)) (cdr y) y))))
            (car list) (cdr list))))
  
-(print (gulya '(a a a b b n n n n)))
+(print (per '(a a a b b n n n n)))
