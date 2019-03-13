@@ -6,4 +6,4 @@
              (cons x  (rep (if (eq x (car y)) (cdr y) y))))
            (car list) (cdr list))))
  
-(print (per '(a a a b b n n n n)))
+(print (rep '(a a a b b n n n n)))
