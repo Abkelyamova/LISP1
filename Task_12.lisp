@@ -1,13 +1,18 @@
-;Определите функцию, заменяющую в исходном списке два подряд идущих одинаковых элемента одним. 
-
+;12 Определите функцию, заменяющую в исходном списке два подряд идущих одинаковых элемента одним. 
 (defun delete_couple (list) 
     (cond 
         ((null list) nil)
         (t ((lambda (head tail)
-                    (cons head (delete_couple (if   (eq head (car tail))   (cdr tail)   tail )
-                            )
+                    (cons head (delete_couple 
+                                  (if   
+                                      (eq head (car tail))   
+                                      (cdr tail)   
+                                       tail 
+                                   )
+                                
+                               )
                     )
-             )
+            )
              (car list) 
              (cdr list)
            ) 
