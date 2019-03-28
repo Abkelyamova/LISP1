@@ -1,11 +1,11 @@
 ;12 Определите функцию, заменяющую в исходном списке 
 ;два подряд идущих одинаковых элемента одним. 
 
-(defun delete_couple (list) 
+(defun delete-couple (list) 
     (cond 
         ((null list) nil)
         (t ((lambda (head tail)
-                    (cons head (delete_couple 
+                    (cons head (delete-couple 
                                   (if   
                                       (eq head (car tail))   
                                       (cdr tail)   
@@ -21,5 +21,5 @@
     )
 )
 
-(print (delete_couple '(a a a b b n n n n))); (A A B N N)
-(print (delete_couple '())); nil
+(print (delete-couple '(a a a b b n n n n))); (A A B N N)
+(print (delete-couple '())); nil
