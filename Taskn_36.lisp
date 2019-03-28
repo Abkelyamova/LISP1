@@ -12,7 +12,7 @@
 (defun not-intersect (set1 set2)
     (cond 
         ((null set1) t)
-        (t(if (memberp (car set1) set2 )
+        (t (if (memberp (car set1) set2 )
                nil
               (not-intersect (cdr set1) set2)
           )
