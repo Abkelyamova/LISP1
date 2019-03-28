@@ -3,11 +3,11 @@
 (defun removep(x set)
     (cond
         ((null set) nil)
-        (t ((lambda (f rem)
-               (if (equal x f) 
-                   rem
-                  (cons f rem)
-               ) 
+        (t ((lambda (a b)
+               (if (equal x a) 
+                   b
+                   (cons a b)
+               )
             ) 
             (car set)
             (removep x (cdr set))
@@ -18,7 +18,7 @@
 
 (defun memberp (x set)
     (cond
-        ((null set) NIL)
+        ((null set) nil)
         ((equal (car set) x) t)
         (t (memberp x (cdr set)))
     )
@@ -31,11 +31,7 @@
         (t ((lambda (head tail) 
                 (if 
                     (memberp head set2) 
-                    (cons head (union-set tail 
-                                         (removep head 
-                                                  set2)
-                                )
-                    )
+                    (cons head (union-set tail (removep head set2)))
                     (cons head (union-set tail set2))
                 )
             )
