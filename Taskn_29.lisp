@@ -1,18 +1,14 @@
 ;29 Определите функцию, вычисляющую глубину списка (самой глубокой ветви).
 
-( defun depth (list)
-    (cond
-        ((null list) 0)
-        (t ((lambda (x y) 
-                    (max x y)
-            ) 
-            (1+ (depth (cadr list)))
-            (1+ (depth (caddr list)))
-           )
-        )
-    )
-)
+(defun depth (lst)
+	(if (or (atom lst) (null lst))
+		0
+		(max (+ 1 (depth (car lst))) 
+             (depth (cdr lst)))
+	)
+)	
 
-(print (depth '(1 NIL NIL))) ; 1
-(print (depth '(A (B (С (В)))))) ; 4
-(print (depth NIL)) ; 0
+(print (depth  '(1 2 3)));1
+(print (depth '((1) (2 (4) 5) (3))));3
+(print (depth '((1) (2) (3))));2
+(print (depth 5));0
