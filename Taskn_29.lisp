@@ -2,7 +2,7 @@
 
 (defun depth (lst)
 	(if (or (atom lst) (null lst))
-		0
+		nil
 		(max (+ 1 (depth (car lst))) 
              (depth (cdr lst)))
 	)
