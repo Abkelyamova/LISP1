@@ -4,7 +4,7 @@
 	(if (or (atom lst) (null lst))
 		nil
 		(max (+ 1 (depth (car lst))) 
-             (depth (cdr lst)))
+                     (depth (cdr lst)))
 	)
 )	
 
