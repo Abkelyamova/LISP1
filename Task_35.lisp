@@ -20,7 +20,7 @@
     (cond 
         ((null set1) t)
         ((equalp set1 set2) nil)
-        ((memberp (car set1) set2) (subset (cdr set1) set2))
+        (t (subset (set1 set2)))
     )
 )
 
