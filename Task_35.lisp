@@ -18,7 +18,6 @@
 
 (defun own-subset (set1 set2)
     (cond 
-        ((null set1) t)
         ((equalp set1 set2) nil)
         (t (subset (set1 set2)))
     )
