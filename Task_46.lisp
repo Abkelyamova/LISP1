@@ -4,7 +4,7 @@
 ;родные или с одним общим родителем.
 
 
-(defun set-pair (name parents)
+(defun set-parents (name parents)
     (setf (get name 'father) (car parents))
     (setf (get name 'mother) (cadr parents))
 )
@@ -18,8 +18,8 @@
             (eq (get name1 'mother) (get name2 'mother)))
 )
 
-(set-pair 'Anya '(Oleg Marina))
-(set-pair 'Grisha '(Oleg Polina))
+(set-parents 'Anya '(Oleg Marina))
+(set-parents 'Grisha '(Oleg Polina))
 (print (get-parents 'Anya))
 (print (get-parents 'Grisha))
 (print (are-they-native 'Anya 'Grisha))
