@@ -16,12 +16,18 @@
     )
 )
 
+
 (defun own-subset (set1 set2)
     (cond 
+        ((null set1) nil)
         ((equalp set1 set2) nil)
         (t (subset (set1 set2)))
     )
 )
+
+
+(print (own-subset nil '(4 3))) ; nil
+(print (subset nil '(4 3))) ; T 
 
 (print (subset '(4 3) '(4 3))) ; T
 (print (own-subset '(4 3) '(4 3))) ; nil
