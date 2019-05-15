@@ -1,6 +1,6 @@
 ;1. ОпределитеFUNCALLчерез функционал APPLY
 
-(defun funcall-apply (fn &rest lst)
+(defun funcall-apply (fn lst)
     (apply fn lst)
 )
 
